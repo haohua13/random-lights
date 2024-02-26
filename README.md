@@ -4,3 +4,8 @@ Random art for projector nights. Uses random sinusoidal functions for image gene
 [In Progress]
 
 Run test.py
+
+
+Example image:
+
+<img src = "https://github.com/haohua13/random-lights/blob/main/img0.png" title = "Image" width = 500 >
