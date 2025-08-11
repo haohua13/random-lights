@@ -17,7 +17,7 @@ Since each RGB channel is generated from a different expression, with time-offse
 
 Example:
 
-<img src = "https://github.com/haohua13/random-lights/blob/main/symmetric_trippy_frame.png" title = "Image" width = 500 >
+<img src = "https://github.com/haohua13/random-lights/blob/main/trippy_frame.png" title = "Image" width = 500 >
 
 
 Run nature_image_generator.py
