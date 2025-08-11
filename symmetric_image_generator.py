@@ -3,8 +3,6 @@ from PIL import Image, ImageTk
 import tkinter as tk
 import colorsys
 
-# ======== Expression Base ========
-
 class Variable:
     def __init__(self, name): self.name = name
     def eval(self, x, y, t): return {"x": x, "y": y, "t": t}[self.name]
@@ -29,8 +27,6 @@ class Avg:
         self.b = buildExpression(prob**2)
     def eval(self, x, y, t): return (self.a.eval(x, y, t) + self.b.eval(x, y, t)) / 2
 
-# ======== Build Expressions ========
-
 def buildExpression(prob=0.95):
     primitives = [Variable("x"), Variable("y"), Variable("t")]
     funcs = [Sin, Cos, Times, Avg]
@@ -39,14 +35,12 @@ def buildExpression(prob=0.95):
     else:
         return random.choice(primitives)
 
-# ======== Pattern Generator ========
-
 def plotPattern(expr, ppu, w, h, t):
     img = Image.new("L", (w, h))
     pixels = img.load()
     for py in range(h):
         for px in range(w):
-            # Convert to centered coords
+            # convert to centered coords
             nx = (px - w/2) / ppu
             ny = (py - h/2) / ppu
 
@@ -85,7 +79,7 @@ def update_image(label, root, ppu, sw, sh, tw, th):
     t = time.time() - start_time
 
     # regenerate expression every ~25s for variety
-    if int(t) % 25 == 0 and random.random() < 0.02:
+    if int(t) % 10 == 0 and random.random() < 0.02:
         expr = buildExpression()
 
     img = plotColor(expr, ppu, sw, sh, t)
@@ -113,6 +107,9 @@ def main():
     start_time = time.time()
 
     root.after(0, update_image, label, root, ppu, sw, sh, tw, th)
+    # save a random image to start
+    image = plotColor(expr, ppu, sw, sh, 0)
+    image.save("symmetric_trippy_frame.png")
     root.mainloop()
 
 if __name__ == "__main__":

@@ -140,8 +140,8 @@ def main():
     root.after(0, update_image, label, root, ppu, sw, sh, tw, th, 0)
     # save a random image to start
     image = plotColor(red, green, blue, ppu, sw, sh)
-    # save the first image as img1.png
-    image.save("img1.png")
+    # save the first image as trippy_frame.png
+    image.save("trippy_frame.png")
     root.mainloop()
 
 if __name__ == "__main__":
