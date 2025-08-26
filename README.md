@@ -22,7 +22,7 @@ Example:
 
 Run nature_image_generator.py
 
-Added more toned down colors and symmetry for nature (water, clouds, tress, etc) images. Instead using different expressions, we use the same expressions for the RGB channels, but change only the time-offset
+Added more toned down colors and symmetry for nature (water, clouds, tress, etc) images. Instead of using different expressions for each RGB channel, we use the same expressions for the RGB channels, but change only the time-offset
 
 [In Progress]
 
